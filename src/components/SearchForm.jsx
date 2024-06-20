@@ -1,28 +1,29 @@
-import { useState } from "react";
+import React, { useState, useContext } from "react";
+import { MovieContext } from "./MovieContext";
 
-function SearchForm ({search}) {
-    const [title, setTitle] = useState('')
+function SearchForm() {
+    const [title, setTitle] = useState('');
+    const { setSearchQuery } = useContext(MovieContext);
 
     const handleChange = (e) => {
-        setTitle(e.target.value)
-    }
+        setTitle(e.target.value);
+    };
 
     const handleSubmit = (e) => {
-        e.preventDefault()
-        console.log(title)
-        search(title)
-    }
+        e.preventDefault();
+        setSearchQuery(title);
+    };
+
+
     return (
-        <div>
-
-        <form onSubmit={handleSubmit}>
-<input type="text" name="title" value={title} placeholder="Search For Your Movie Here" onChange={handleChange} />
-<button type="submit">Submit</button>
-        </form>
-        {/* <p>{title}</p> */}
+        <div className="title-search"> 
+            <form onSubmit={handleSubmit} >
+                <input type="text" name="title" value={title} placeholder="Search For Your Movie Here" onChange={handleChange} />
+                <button type="submit">Submit</button>
+            </form>
+        
         </div>
-    )
-}
+        
+    )}
 
-export default SearchForm;
-
+    export default SearchForm
