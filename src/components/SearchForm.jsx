@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-function SearchForm () {
+function SearchForm ({search}) {
     const [title, setTitle] = useState('')
 
     const handleChange = (e) => {
@@ -10,6 +10,7 @@ function SearchForm () {
     const handleSubmit = (e) => {
         e.preventDefault()
         console.log(title)
+        search(title)
     }
     return (
         <div>
@@ -24,3 +25,4 @@ function SearchForm () {
 }
 
 export default SearchForm;
+
