@@ -1,14 +1,11 @@
 
 import './App.css';
-import MovieList from './components/MovieList';
-import SearchForm from './components/SearchForm';
+import MovieSearch from './components/MovieSearch';
 
 function App() {
   return (
     <div>
-     <SearchForm/> 
-     <br/>
-     <MovieList/>
+   <MovieSearch/>
     </div>
   );
 }
