@@ -18,8 +18,10 @@ function SearchForm() {
     return (
         <div className="title-search"> 
             <form onSubmit={handleSubmit} >
-                <input type="text" name="title" value={title} placeholder="Search For Your Movie Here" onChange={handleChange} />
-                <button type="submit">Submit</button>
+                {/* <input type="text" name="title" value={title} placeholder="Search For Your Movie Here" onChange={handleChange} />
+                <button type="submit">Submit</button> */}
+                <input type="text" name="text" placeholder="Search 'UIverse'" class="input" value={title} onChange={handleChange}/>
+                
             </form>
         
         </div>
